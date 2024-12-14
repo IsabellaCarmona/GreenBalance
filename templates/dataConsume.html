@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="../static/dataConsumeStyle.css">
+	<link rel="icon" href="{{url_for('static', filename='renovable.ico')}}" type="image/x-icon">
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="dashboard-river">
+
+		<div class="dashboard-container">
+
+			<div class="dashboard">
+
+				<div class="ui-row-1">
+
+					<div class="logo-comp">
+						<div><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 297 297"
+								xml:space="preserve">
+								<g>
+									<path
+										d="M48.523,73.196h18.131c5.597,0,10.137-4.536,10.137-10.134c0-5.6-4.54-10.137-10.137-10.137H48.523 c-5.599,0-10.137,4.537-10.137,10.137C38.387,68.66,42.925,73.196,48.523,73.196z" />
+									<path
+										d="M47.628,123.657c0-5.598-4.54-10.137-10.137-10.137H19.357c-5.599,0-10.135,4.539-10.135,10.137 c0,5.597,4.536,10.135,10.135,10.135h18.134C43.088,133.792,47.628,129.254,47.628,123.657z" />
+									<path
+										d="M277.643,95.387h-18.135c-5.597,0-10.137,4.539-10.137,10.135c0,5.601,4.54,10.137,10.137,10.137h18.135 c5.599,0,10.135-4.536,10.135-10.137C287.777,99.926,283.241,95.387,277.643,95.387z" />
+									<path
+										d="M140.148,203.69v83.173c0,5.598,4.54,10.137,10.137,10.137c5.599,0,10.137-4.539,10.137-10.137V203.69h93.406 c5.597,0,10.137-4.539,10.137-10.136c0-5.598-4.54-10.137-10.137-10.137H227.05c3.911-8.197,5.898-17.617,5.898-28.209 c0-29.299-21.058-60.583-39.637-88.187c-5.055-7.506-9.829-14.599-13.809-21.124c-1.689-3.791-1.094-19.677,1.284-34.106 c0.487-2.938-0.344-5.942-2.271-8.212c-1.926-2.27-4.752-3.58-7.73-3.58h-40.998c-2.977,0-5.803,1.313-7.729,3.58 c-1.924,2.268-2.755,5.271-2.273,8.21c2.383,14.432,2.978,30.316,1.288,34.107c-3.984,6.527-8.759,13.619-13.813,21.126 c-18.579,27.604-39.639,58.887-39.639,88.186c0,10.592,1.987,20.012,5.902,28.209H46.745c-5.601,0-10.137,4.539-10.137,10.137 c0,5.597,4.536,10.136,10.137,10.136H140.148z M202.707,183.418H97.864c-6.701-7.003-9.968-16.27-9.968-28.209 c0-23.111,19.222-51.669,36.182-76.865c5.209-7.738,10.13-15.05,14.363-21.993c4.769-7.819,4.27-23.774,2.954-36.077h17.781 c-1.316,12.302-1.813,28.257,2.952,36.077c4.233,6.943,9.153,14.252,14.362,21.992c16.96,25.197,36.184,53.755,36.184,76.866 C212.675,167.148,209.406,176.417,202.707,183.418z" />
+								</g>
+							</svg></div>
+						<p>GreenBalance</p>
+					</div>
+
+				</div>
+
+				<div class="ui-row-2">
+
+					<div class="left-sidebar">
+
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" id="home">
+								<path fill-rule="evenodd"
+									d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+								<path fill-rule="evenodd"
+									d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+							</svg>
+						</div>
+
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmarks-fill" id="dataConsumeRegister"
+								viewBox="0 0 16 16">
+								<path
+									d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z" />
+								<path
+									d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z" />
+							</svg>
+						</div>
+
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bar-chart-fill" id="graphics"
+								viewBox="0 0 16 16">
+								<path
+									d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+							</svg>
+						</div>
+
+					</div>
+
+					<div class="main-content">
+            <div class="container h-100">
+              <div class="d-flex justify-content-center">
+                <div class="card mt-5 col-md-4 animated bounceInDown myForm">
+                  <div class="card-header">
+                    <h4>Registro de datos consumo de servicios</h4>
+                  </div>
+                  <div class="card-body">
+                    <form class="form"
+                    id="registerForm"
+                    action="http://127.0.0.1:8080/consumeRegister"
+                    method="POST">
+                      <div id="dynamic_container">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+                          </div>
+                          <label>Tipo de servicio</label><br>
+                          <select name="types" id="types" class="selectpicker" data-size="4">
+                            <option>Seleccione una opción</option>
+                            <option value="water">Agua</option>
+                            <option value="energy">Energia</option>
+                            <option value="gas">Gas</option>
+                          </select>
+                        </div>
+                        <div class="input-group mt-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text br-15"><i class="fas fa-phone-square"></i></span>
+                          </div>
+                          <label>Mes</label>
+                          <input type="month" id ="month" class="form-control"/>
+                        </div>
+                        <div class="input-group mt-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text br-15"><i class="fas fa-at"></i></span>
+                          </div>
+                          <label>Consumo del mes</label>
+                          <input type="number" min="1" id ="consume" placeholder="kWh/m³"  class="form-control"/>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="form__field">
+                    <input type="submit" value="registerConsume" />
+                  </div>
+                </div>
+              </div>
+              </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById("home").addEventListener("click", () => {
+        window.location.href = "index";
+      });
+
+      document.getElementById("graphics").addEventListener("click", () => {
+        window.location.href = "dataConsumeGraphics";
+      });
+
+      document.getElementById("dataConsumeRegister").addEventListener("click", () => {
+        window.location.href = "dataConsumeRegister";
+      });
+
+			document
+        .getElementById("registerForm")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const type = document.getElementById("types").value;
+          const month = document.getElementById("month").value;
+          const consume = document.getElementById("consume").value;
+
+          try {
+            const response = await fetch("http://127.0.0.1:8080/consumeRegister", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ type, month, consume }),
+            });
+
+            const contentType = response.headers.get("Content-Type");
+            let result;
+
+            if (contentType && contentType.includes("application/json")) {
+              result = await response.json();
+            } else {
+              result = { message: "Respuesta vacía o no válida del servidor." };
+            }
+
+            if (response.ok) {
+              message.textContent = "Datos registrados con éxito";
+              message.style.color = "green";
+
+              window.location.href = "index";
+            } else {
+              message.textContent = result.message || "Ocurrió un error.";
+              message.style.color = "red";
+            }
+          } catch (error) {
+            console.error("Error:", error);
+
+            message.textContent = "Error al conectar con el servidor.";
+            message.style.color = "red";
+          }
+        });
+		</script>
+</body>
+
+</html>

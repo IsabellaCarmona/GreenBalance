@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='dataConsumeGraphicsStyle.css')}}">
+	<link rel="icon" href="{{url_for('static', filename='renovable.ico')}}" type="image/x-icon">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="dashboard-river">
+
+		<div class="dashboard-container">
+
+			<div class="dashboard">
+
+				<div class="ui-row-1">
+
+					<div class="logo-comp">
+						<div><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 297 297"
+								xml:space="preserve">
+								<g>
+									<path
+										d="M48.523,73.196h18.131c5.597,0,10.137-4.536,10.137-10.134c0-5.6-4.54-10.137-10.137-10.137H48.523 c-5.599,0-10.137,4.537-10.137,10.137C38.387,68.66,42.925,73.196,48.523,73.196z" />
+									<path
+										d="M47.628,123.657c0-5.598-4.54-10.137-10.137-10.137H19.357c-5.599,0-10.135,4.539-10.135,10.137 c0,5.597,4.536,10.135,10.135,10.135h18.134C43.088,133.792,47.628,129.254,47.628,123.657z" />
+									<path
+										d="M277.643,95.387h-18.135c-5.597,0-10.137,4.539-10.137,10.135c0,5.601,4.54,10.137,10.137,10.137h18.135 c5.599,0,10.135-4.536,10.135-10.137C287.777,99.926,283.241,95.387,277.643,95.387z" />
+									<path
+										d="M140.148,203.69v83.173c0,5.598,4.54,10.137,10.137,10.137c5.599,0,10.137-4.539,10.137-10.137V203.69h93.406 c5.597,0,10.137-4.539,10.137-10.136c0-5.598-4.54-10.137-10.137-10.137H227.05c3.911-8.197,5.898-17.617,5.898-28.209 c0-29.299-21.058-60.583-39.637-88.187c-5.055-7.506-9.829-14.599-13.809-21.124c-1.689-3.791-1.094-19.677,1.284-34.106 c0.487-2.938-0.344-5.942-2.271-8.212c-1.926-2.27-4.752-3.58-7.73-3.58h-40.998c-2.977,0-5.803,1.313-7.729,3.58 c-1.924,2.268-2.755,5.271-2.273,8.21c2.383,14.432,2.978,30.316,1.288,34.107c-3.984,6.527-8.759,13.619-13.813,21.126 c-18.579,27.604-39.639,58.887-39.639,88.186c0,10.592,1.987,20.012,5.902,28.209H46.745c-5.601,0-10.137,4.539-10.137,10.137 c0,5.597,4.536,10.136,10.137,10.136H140.148z M202.707,183.418H97.864c-6.701-7.003-9.968-16.27-9.968-28.209 c0-23.111,19.222-51.669,36.182-76.865c5.209-7.738,10.13-15.05,14.363-21.993c4.769-7.819,4.27-23.774,2.954-36.077h17.781 c-1.316,12.302-1.813,28.257,2.952,36.077c4.233,6.943,9.153,14.252,14.362,21.992c16.96,25.197,36.184,53.755,36.184,76.866 C212.675,167.148,209.406,176.417,202.707,183.418z" />
+								</g>
+							</svg></div>
+						<p>GreenBalance</p>
+					</div>
+
+				</div>
+
+				<div class="ui-row-2">
+
+					<div class="left-sidebar">
+
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" id="home">
+								<path fill-rule="evenodd"
+									d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+								<path fill-rule="evenodd"
+									d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+							</svg>
+						</div>
+
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmarks-fill" id="dataConsumeRegister"
+								viewBox="0 0 16 16">
+								<path
+									d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z" />
+								<path
+									d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z" />
+							</svg>
+						</div>
+
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bar-chart-fill" id="graphics"
+								viewBox="0 0 16 16">
+								<path
+									d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+							</svg>
+						</div>
+
+					</div>
+
+					<div class="main-content">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="tile-progress tile-primary">
+										<div class="tile-header">
+											<h3>Gas</h3>
+											<span>Consumo anual de gas.</span>
+										</div>
+										<div class="tile-progressbar">
+											<span data-fill="65.5%" style="width: 65.5%;"></span>
+										</div>
+										<div class="tile-footer">
+											<h4>
+												<span class="pct-counter">65.5</span>% Aumento
+											</h4>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="tile-progress tile-yellow">
+										<div class="tile-header">
+											<h3>Energía</h3>
+											<span>Consumo anual de energía.</span>
+										</div>
+										<div class="tile-progressbar">
+											<span data-fill="23.2%" style="width: 23.2%;"></span>
+										</div>
+										<div class="tile-footer">
+											<h4>
+												<span class="pct-counter">23.2</span>% Aumento
+											</h4>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="tile-progress tile-blue">
+										<div class="tile-header">
+											<h3>Agua</h3>
+											<span>Consumo anual de agua.</span>
+										</div>
+										<div class="tile-progressbar">
+											<span data-fill="78%" style="width: 78%;"></span>
+										</div>
+										<div class="tile-footer">
+											<h4>
+												<span class="pct-counter">78</span>% Aumento
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<section>
+							<div class="pieID pie">
+
+							</div>
+							<ul class="pieID legend">
+								<li>
+									<em>Agua</em>
+									<span>718</span>
+								</li>
+								<li>
+									<em>Gas</em>
+									<span>531</span>
+								</li>
+								<li>
+									<em>Energía</em>
+									<span>868</span>
+								</li>
+							</ul>
+						</section>
+
+						<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+							<canvas id="myChart" type="pie"></canvas>
+						</div>
+						
+
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<script>
+			document.getElementById("home").addEventListener("click", () => {
+				window.location.href = "index";
+			});
+
+			document.getElementById("graphics").addEventListener("click", () => {
+				window.location.href = "dataConsumeGraphics";
+			});
+
+			document.getElementById("dataConsumeRegister").addEventListener("click", () => {
+				window.location.href = "dataConsumeRegister";
+			});
+			function sliceSize(dataNum, dataTotal) {
+				return (dataNum / dataTotal) * 360;
+			}
+
+			function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+				$(pieElement).append("<div class='slice " + sliceID + "'><span></span></div>");
+				var offset = offset - 1;
+				var sizeRotation = -179 + sliceSize;
+				$("." + sliceID).css({
+					"transform": "rotate(" + offset + "deg) translate3d(0,0,0)"
+				});
+				$("." + sliceID + " span").css({
+					"transform": "rotate(" + sizeRotation + "deg) translate3d(0,0,0)",
+					"background-color": color
+				});
+			}
+			function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+				var sliceID = "s" + dataCount + "-" + sliceCount;
+				var maxSize = 179;
+				if (sliceSize <= maxSize) {
+					addSlice(sliceSize, pieElement, offset, sliceID, color);
+				} else {
+					addSlice(maxSize, pieElement, offset, sliceID, color);
+					iterateSlices(sliceSize - maxSize, pieElement, offset + maxSize, dataCount, sliceCount + 1, color);
+				}
+			}
+			function createPie(dataElement, pieElement) {
+				var listData = [];
+				$(dataElement + " span").each(function () {
+					listData.push(Number($(this).html()));
+				});
+				var listTotal = 0;
+				for (var i = 0; i < listData.length; i++) {
+					listTotal += listData[i];
+				}
+				var offset = 0;
+				var color = [
+					"cornflowerblue",
+					"olivedrab",
+					"orange",
+					"tomato",
+					"crimson",
+					"purple",
+					"turquoise",
+					"forestgreen",
+					"navy",
+					"gray"
+				];
+				for (var i = 0; i < listData.length; i++) {
+					var size = sliceSize(listData[i], listTotal);
+					iterateSlices(size, pieElement, offset, i, 0, color[i]);
+					$(dataElement + " li:nth-child(" + (i + 1) + ")").css("border-color", color[i]);
+					offset += size;
+				}
+			}
+			createPie(".pieID.legend", ".pieID.pie");
+
+			document.addEventListener("DOMContentLoaded", function () {
+    // Obtener datos del backend
+    fetch("/dataConsumeGraphics", {
+        method: "POST",
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                console.error("Error:", data.message);
+                return;
+            }
+
+            // Datos de la respuesta
+            const tipos = Object.keys(data);
+            const valores = Object.values(data);
+
+            // Configuración de Chart.js
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar', // Tipo de gráfico (puede ser 'line', 'pie', 'doughnut', etc.)
+                data: {
+                    labels: tipos, // ['agua', 'energia', 'gas']
+                    datasets: [{
+                        label: 'Consumo Anual (m³/kWh)',
+                        data: valores, // [718, 531, 868]
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.7)', // Agua
+                            'rgba(255, 206, 86, 0.7)', // Energía
+                            'rgba(75, 192, 192, 0.7)'  // Gas
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error("Error al obtener datos:", error));
+});
+
+		</script>
+</body>
+
+</html>

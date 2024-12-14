@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link
+      rel="icon"
+      href="{{url_for('static', filename='renovable.ico')}}"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="align">
+    <div class="grid align__item">
+      <div class="login" id="login">
+        <img
+          src="{{url_for('static', filename='renovable.png')}}"
+          alt="Logo del sitio"
+          class="site__logo"
+          width="104"
+          height="108"
+        />
+
+        <h2>GreenBalance</h2>
+
+        <form
+          class="form"
+          id="loginForm"
+          action="http://127.0.0.1:8080/login"
+          method="POST"
+        >
+          <div class="form__field">
+            <input type="text" id="username" placeholder="username" />
+          </div>
+
+          <div class="form__field">
+            <input type="password" id="password" placeholder="••••••••••" />
+          </div>
+
+          <div class="form__field">
+            <input type="submit" value="Login" />
+          </div>
+        </form>
+
+        <label id="message"></label>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const message = document.getElementById("message");
+
+          try {
+            const response = await fetch("http://127.0.0.1:8080/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ username, password }),
+            });
+
+            const contentType = response.headers.get("Content-Type");
+            let result;
+
+            if (contentType && contentType.includes("application/json")) {
+              result = await response.json();
+            } else {
+              result = { message: "Respuesta vacía o no válida del servidor." };
+            }
+
+            if (response.ok) {
+              message.textContent = "Inicio de sesión exitoso.";
+              message.style.color = "green";
+
+              window.location.href = "index";
+            } else {
+              message.textContent = result.message || "Ocurrió un error.";
+              message.style.color = "red";
+            }
+          } catch (error) {
+            console.error("Error:", error);
+
+            message.textContent = "Error al conectar con el servidor.";
+            message.style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>
